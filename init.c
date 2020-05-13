@@ -25,14 +25,14 @@ int main(int argc, char **argv)
  *
  *
  */
-init_montyStruct()
+void init_montyStruct(void)
 {
 
 	monty.file = NULL;
 	monty.line = NULL;
 	monty.stack = NULL;
 	monty.line_number = 1;
-	monty.it_queue = false;
+	monty.is_queue = false;
 }
 
 /**

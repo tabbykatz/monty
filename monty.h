@@ -61,8 +61,12 @@ typedef struct instruction_s
 
 /* prototypes - monty specific*/
 void open_up(int argc, char *filename);
-void read_line();
+void read_line(void);
 void op_choose(stack_t **stack, char *opcode);
+void init_montyStruct(void);
+void free_it_all(void);
+void free_build(stack_t *h);
+
 
 /* prototypes - opcode functions */
 void push(stack_t **stack, unsigned int linenumber);
