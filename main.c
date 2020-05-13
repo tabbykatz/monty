@@ -42,7 +42,7 @@ void read_line(void)
 			data = strtok(NULL, " \n");
 			if (monty.is_queue)
 				/* write a func what pushes to the queue (end) */
-				push_node_end(data);
+				//push_node_end(data);
 			else
 				/* write a func what pushes to the stack */
 				push_node(data);
@@ -64,11 +64,11 @@ void op_choose(stack_t **stack, char *opcode)
 	char *op;
 	instruction_t fncs[] = {
 		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
-		{"nop", nop},
+//		{"pint", pint},
+//		{"pop", pop},
+//		{"swap", swap},
+//		{"add", add},
+//		{"nop", nop},
 //		{"sub", sub},
 //		{"div", div_op},
 //		{"mul", mul},
