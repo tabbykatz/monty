@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	init_montyStruct();
 	open_up(argc, argv[1]);
 	read_line();
-	free_it_all();
+//	free_it_all();
 	return (EXIT_SUCCESS);
 }
 
