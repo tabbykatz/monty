@@ -7,7 +7,7 @@
  * @stack: double list
  * @linenumber: line
  */
-void add(stack_t **stack, int linenumber)
+void add(stack_t **stack, unsigned int linenumber)
 {
 	if (*stack && (*stack)->next)
 	{
