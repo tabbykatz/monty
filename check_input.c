@@ -8,16 +8,20 @@
  */
 bool check_input(char *str)
 {
+	/* declarations */
 	int i = 0;
 
+	/* no argument */
 	if (strlen(str) <= 0)
 	{
 		return (false);
 	}
+	/* no negative sign or number, bad */
 	if (str[0] != '-' && !isdigit(str[0]))
 	{
 		return (false);
 	}
+	/* checking to make sure it's all digits */
 	for (i = 1; str[i]; i++)
 	{
 		if (!isdigit(str[i]))
