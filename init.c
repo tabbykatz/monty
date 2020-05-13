@@ -45,7 +45,7 @@ void free_it_all(void)
 {
 	fclose(monty.file);
 	free(monty.line);
-	free_build(monty.stack)
+	free_build(monty.stack);
 }
 
 /**

@@ -9,6 +9,7 @@
 #include <ctype.h>
 #include <stdarg.h>
 #include <errno.h>
+#include <stdbool.h>
 
 /* including our lists header */
 
@@ -66,6 +67,7 @@ void op_choose(stack_t **stack, char *opcode);
 void init_montyStruct(void);
 void free_it_all(void);
 void free_build(stack_t *h);
+bool check_input(char *str);
 
 
 /* prototypes - opcode functions */
