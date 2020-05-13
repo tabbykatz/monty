@@ -5,19 +5,27 @@
  * @stack: double list
  * @linenumber: line
  */
-void push(stack_t **stack, unsigned int linenumber)
+void push(char *argument)
 {
-	char *argument = strtok(NULL, " \n");
 	int data;
+	stack_t *new;
 
 	//make func to check input is alpha a/o numeric
-	//if (isAlpha)
+	//if (is_valid_inut(argument)
 	data = atoi(argument);
-	if (args.order == 1)
-		add_nodeint(stack, data);
-	else
-		add_dnodeint_end(stack, data);
-	//else error routine
+	new = malloc(sizeof(stack_t));
+	if (!new)
+	{
+		//Error msg
+		//free al
+		//exit(EXIT_FAILURE);
+	}
+	new->n = data;
+	new->next = monty.stack;
+	new->prev = NULL;
+	if (new-next)
+		new->next->prev = new;
+	monty.stack = new;
 }
 /**
  * pop - delete node from top of list
