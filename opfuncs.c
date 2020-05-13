@@ -23,7 +23,7 @@ void push(char *argument)
 	new->n = data;
 	new->next = monty.stack;
 	new->prev = NULL;
-	if (new-next)
+	if (new->next)
 		new->next->prev = new;
 	monty.stack = new;
 }
@@ -32,7 +32,7 @@ void push(char *argument)
  * @stack: double list
  * @linenumber: line
  */
-void pop(stack_t **stack, unsigned int linenumber)
+/* void pop(stack_t **stack, unsigned int linenumber)
 {
 	if (stack)
 		delete_dnodeint_at_index(stack, 0);
@@ -40,13 +40,13 @@ void pop(stack_t **stack, unsigned int linenumber)
 		fprintf(sdterr, "Cant pop from empty stack");
 		//free all
 		exit(EXIT_FAILURE);
-}
+}*/
 /**
  * swap - swap place of top two members in stack
  * @stack: double list
  * @linenumber: line
  */
-void swap(stack_t **stack, unsigned int linenumber)
+/* void swap(stack_t **stack, unsigned int linenumber)
 {
 	int tmp;
 	//swap first two stack members data element
@@ -63,13 +63,15 @@ void swap(stack_t **stack, unsigned int linenumber)
 		exit(EXIT_STATUS);
 	}
 }
+*/
 /**
  * nop - does nothng
  * @stack: double list
  * @linenumber: line
  */
-void nop(stack_t **stack, unsigned int linenumber)
+/* void nop(stack_t **stack, unsigned int linenumber)
 {
 	(void)stack;
 	(void)linenumber;
 }
+*/
