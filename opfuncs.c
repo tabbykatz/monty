@@ -1,4 +1,5 @@
-#include <lists.h>
+#include "monty.h"
+#include "lists.h"
 /**
  * push - add node to list
  * @stack: double list

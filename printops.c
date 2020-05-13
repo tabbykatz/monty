@@ -1,5 +1,5 @@
-#include <lists.h>
-#include <monty.h>
+#include "lists.h"
+#include "monty.h"
 /**
  * pall - print all members
  * @stack: double list

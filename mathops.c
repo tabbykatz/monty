@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <lists.h>
-#include <monty.h>
+#include "lists.h"
+#include "monty.h"
 
 /**
  * add - adds top two stack mems
