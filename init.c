@@ -52,7 +52,7 @@ void free_it_all(void)
  * free_build - frees the stack
  * @h: the head of stack
  *
- * 
+ *
  */
 void free_build(stack_t *h)
 {

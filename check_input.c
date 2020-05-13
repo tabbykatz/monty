@@ -16,7 +16,7 @@ bool check_input(char *str)
 	}
 	if (str[0] != '-' && !isdigit(str[0]))
 	{
-		return (false);    
+		return (false);
 	}
 	for (i = 1; str[i]; i++)
 	{
