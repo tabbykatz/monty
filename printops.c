@@ -5,7 +5,7 @@
  * @stack: double list
  * @linenumber: line
  */
-void pall(stack_t **stack, int linenumber)
+void pall(stack_t **stack, unsigned int linenumber)
 {
 	print_dlistint(stack);
 }
@@ -14,7 +14,7 @@ void pall(stack_t **stack, int linenumber)
  * @stack: double list
  * @linenumber: line
  */
-void pint(stack_t **stack, int linenumber)
+void pint(stack_t **stack, unsigned int linenumber)
 {
 	if (stack)
 		printf("%d\n", (*stack)->n);
