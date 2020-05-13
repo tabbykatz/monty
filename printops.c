@@ -1,4 +1,3 @@
-#include "lists.h"
 #include "monty.h"
 /**
  * pall - print all members
@@ -7,7 +6,13 @@
  */
 void pall(stack_t **stack, unsigned int linenumber)
 {
-	print_dlistint(stack);
+	stack_t *a = *stack;
+
+	while (a)
+	{
+		printf("%d\n", a->n);
+		a = a->next;
+	}
 }
 /**
  * pint - print int in stack
