@@ -4,7 +4,7 @@
  * @stack: double list
  * @linenumber: line
  */
-void push(stack_t **stack, unsigend int linenumber)
+void push(stack_t **stack, unsigned int linenumber)
 {
 	char *argument = strtok(NULL, " \n");
 	int data;
@@ -37,7 +37,7 @@ void pop(stack_t **stack, unsigned int linenumber)
  * @stack: double list
  * @linenumber: line
  */
-void swap(stack_t **stack, int linenumber)
+void swap(stack_t **stack, unsigned int linenumber)
 {
 	int tmp;
 	//swap first two stack members data element
@@ -59,7 +59,7 @@ void swap(stack_t **stack, int linenumber)
  * @stack: double list
  * @linenumber: line
  */
-void nop(stack_t **stack, int linenumber)
+void nop(stack_t **stack, unsigned int linenumber)
 {
 	(void)stack;
 	(void)linenumber;
