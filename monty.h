@@ -71,7 +71,7 @@ bool check_input(char *str);
 
 
 /* prototypes - opcode functions */
-void push(stack_t **stack, unsigned int linenumber);
+void push(char *data);
 void pop(stack_t **stack, unsigned int linenumber);
 void swap(stack_t **stack, unsigned int linenumber);
 void nop(stack_t **stack, unsigned int linenumber);
