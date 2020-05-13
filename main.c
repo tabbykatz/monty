@@ -40,12 +40,7 @@ void read_line(void)
 		else if (strcmp(opcode, "push") == 0)
 		{
 			data = strtok(NULL, " \n");
-			if (monty.is_queue)
-				/* write a func what pushes to the queue (end) */
-				//push_node_end(data);
-			else
-				/* write a func what pushes to the stack */
-				push_node(data);
+			push(data);
 		}
 		else
 			op_choose(&monty.stack, opcode);
