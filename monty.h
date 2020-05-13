@@ -11,22 +11,6 @@
 #include <errno.h>
 #include <stdbool.h>
 
-/* including our lists header */
-
-#include "lists.h"
-
-/* this could be our global struct */
-typedef struct monty_s
-{
-	FILE *file;
-	char *line;
-	stack_t *stack;
-	unsigned int line_number;
-	bool is_queue;
-} monty_t;
-
-extern monty_t monty;
-
 /*structs they gave us */
 
 /**
@@ -59,6 +43,18 @@ typedef struct instruction_s
 		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /* end structs they gave us */
+
+/* this could be our global struct */
+typedef struct monty_s
+{
+	FILE *file;
+	char *line;
+	stack_t *stack;
+	unsigned int line_number;
+	bool is_queue;
+} monty_t;
+
+extern monty_t monty;
 
 /* prototypes - monty specific*/
 void open_up(int argc, char *filename);
