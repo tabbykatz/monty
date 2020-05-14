@@ -44,13 +44,24 @@ typedef struct instruction_s
 } instruction_t;
 /* end structs they gave us */
 
-/* this could be our global struct */
+/* our global struct */
+
+/**
+ * struct monty_s - global struct to hold all the things
+ * @file: monty file
+ * @line: line we are interpreting
+ * @stack: the stack we are building
+ * @ln: current line number read
+ * @is_queue: flag for stack/ queue
+ *
+ * Description: this is our single global and holds everything we need.
+ */
 typedef struct monty_s
 {
 	FILE *file;
 	char *line;
 	stack_t *stack;
-	unsigned int line_number;
+	unsigned int ln;
 	bool is_queue;
 } monty_t;
 

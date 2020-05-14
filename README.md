@@ -3,7 +3,7 @@
 
 
 ## Description
-This is a interpreter program that is created to interpret Monty-like scripted files according to operation codes provided to the us in the project. 
+This is a program built to interpret Monty-like scripted files according to operation codes provided to us in the project.
 
 ## Formatting and Examples
 

@@ -1,8 +1,7 @@
 #include "monty.h"
 /**
  * push - add node to list
- * @stack: double list
- * @linenumber: line
+ * @argument: int
  */
 void push(char *argument)
 {

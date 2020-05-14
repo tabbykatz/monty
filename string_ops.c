@@ -15,7 +15,8 @@ void pchar(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 	}
 	if ((*stack)->n < 0 || (*stack)->n > 127)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't pchar, value out of range\n", monty.line_number);
+		dprintf(STDERR_FILENO, "L%u: can't pchar, value out of range\n",
+				monty.line_number);
 		free_it_all();
 		exit(EXIT_FAILURE);
 	}

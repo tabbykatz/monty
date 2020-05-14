@@ -51,14 +51,14 @@ void sub(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 	}
 }
 /**
- * div - divs top two stack mems
+ * div_op - divs top two stack mems
  * @stack: double list
  * @linenumber: line
  */
 void div_op(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
 	stack_t *freeable;
-	
+
 	if ((*stack)->n == 0)
 	{
 		dprintf(STDERR_FILENO, "L%u: division by zero\n", monty.line_number);
@@ -83,14 +83,14 @@ void div_op(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 	}
 }
 /**
- * div - divs top two stack mems
+ * mul - muls top two stack mems
  * @stack: double list
  * @linenumber: line
  */
 void mul(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
 	stack_t *freeable;
-	
+
 	if (*stack && (*stack)->next)
 	{
 		(*stack)->next->n *= (*stack)->n;
@@ -108,14 +108,14 @@ void mul(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 	}
 }
 /**
- * div - divs top two stack mems
+ * mod - mods top two stack mems
  * @stack: double list
  * @linenumber: line
  */
 void mod(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
 	stack_t *freeable;
-	
+
 	if ((*stack)->n == 0)
 	{
 		dprintf(STDERR_FILENO, "L%u: division by zero\n", monty.line_number);
