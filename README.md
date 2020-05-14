@@ -31,6 +31,9 @@ NOTE: No more than one instruction per line is allowed, there can however be as 
 | rotr | the bottom of the stack becomes the top |
 | queue, stack | toggles the doubly link list implementation style |
 | nop | opcode should do nothing |
+
+
+
 Examples:
 `$ cat opcodetestfile.m`
 
