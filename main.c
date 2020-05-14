@@ -94,7 +94,7 @@ void op_choose(stack_t **stack, char *opcode)
 	}
 	if (strcmp(opcode, "push"))
 	{
-		dprintf(STDERR_FILENO, "L%d: ", monty.line_number);	
+		dprintf(STDERR_FILENO, "L%d: ", monty.line_number);
 		dprintf(STDERR_FILENO, "unknown instruction %s\n", opcode);
 	}
 	else
