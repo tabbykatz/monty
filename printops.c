@@ -4,7 +4,7 @@
  * @stack: double list
  * @linenumber: line
  */
-void pall(stack_t **stack, unsigned int linenumber)
+void pall(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
 	stack_t *a = *stack;
 

@@ -59,22 +59,22 @@ void op_choose(stack_t **stack, char *opcode)
 	char *op;
 	instruction_t fncs[] = {
 		{"pall", pall},
-//		{"pint", pint},
-//		{"pop", pop},
-//		{"swap", swap},
-//		{"add", add},
-//		{"nop", nop},
-//		{"sub", sub},
-//		{"div", div_op},
-//		{"mul", mul},
-//		{"mod", mod},
-//		{"pchar", pchar},
-//		{"pstr", pstr},
-//		{"rotl", rotl},
-//		{"rotr", rotr},
-//		{"stack", set_stack},
-//		{"queue", set_queue},
-		{NULL, NULL}
+/*		{"pint", pint},
+*		{"pop", pop},
+*		{"swap", swap},
+*		{"add", add},
+*		{"nop", nop},
+*		{"sub", sub},
+*		{"div", div_op},
+*		{"mul", mul},
+*		{"mod", mod},
+*		{"pchar", pchar},
+*		{"pstr", pstr},
+*		{"rotl", rotl},
+*		{"rotr", rotr},
+*		{"stack", set_stack},
+*		{"queue", set_queue},
+*/		{NULL, NULL}
 	};
 
 	op = strtok(opcode, "\n");
