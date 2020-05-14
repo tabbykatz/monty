@@ -103,13 +103,13 @@ Examples:
 | File Name | Description |
 | --- | --- |
 | README.md | Provides details regarding functionality and creation of our version of a monty program (present file) |
-| ? | ? |
-| ? | ? |
-| ? | ? |
-| ? | ? |
-| ? | ? |
-| ? | ? | ? |
-| ? | ? |
+| main.c | The entry point of our interpreter, recieves data and initializes data struct |
+| init.c | This is where data gets read and processed, data is read from file and added to our data structure accordingly |
+| mathops.c | All the functions to perform math operations on the data structure members |
+| string\_ops.c | Contains operations for string manipulation |
+| opfuncs.c, opfuncs2.c | these files contain functionality for basic bytecode operations (pop, push, etc..) |
+| printops.c | operatons to print members from data structure |
+| check\_input.c| checks the type of input given to resolve errors |
 | ? | ? |
 | ? | ? |
 | ? | ?|
