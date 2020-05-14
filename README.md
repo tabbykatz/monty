@@ -11,6 +11,20 @@ Format for user to write in "testfile.m":
 `opcode argument`
 
 NOTE: No more than one instruction per line is allowed, there can however be as many spaces, new lines or tabs before or after the instruction.
+## Allowable opcodes and what they do
+| opcode | functionality |
+| --- | --- |
+| push | add element to the 'top' of stack and 'end' of queue |
+| pop | remove element from 'top' of stack and 'end' of queue|
+| pall | print every member of the structure |
+| pint | prints the member value at the top of stack |
+| swap | swaps the order  of the 1st and 2nd elements in stack |
+| add | add top two member values |
+| sub | subtract the top element from the 2nd top element |
+| div | divide the 2nd element by the top element |
+| mul | multiply the top two elements of the stack |
+| mod | the remainder when the 2nd element is divided by the top element |
+| ||
 
 Examples:
 `$ cat opcodetestfile.m`
