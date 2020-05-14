@@ -10,15 +10,20 @@ void push(char *argument)
 	int data;
 	stack_t *new;
 
-	//make func to check input is alpha a/o numeric
-	//if (is_valid_inut(argument)
+	if (!check_input(argument))
+	{
+		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", monty.line_number);
+		//free it all
+		exit(EXIT_FAILURE);
+	}
+
 	data = atoi(argument);
 	new = malloc(sizeof(stack_t));
 	if (!new)
 	{
-		//Error msg
-		//free al
-		//exit(EXIT_FAILURE);
+		dprintf(STDERR_FILENO, "Error: malloc failed\n");
+		// free_it_all
+		exit(EXIT_FAILURE);
 	}
 	new->n = data;
 	new->next = monty.stack;
