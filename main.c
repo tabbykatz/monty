@@ -39,6 +39,7 @@ void read_line(void)
 		}
 		else if (strcmp(opcode, "push") == 0)
 		{
+			dprintf(STDERR_FILENO, "hi");
 			data = strtok(NULL, " \n");
 			if (monty.is_queue)
 			{
@@ -91,7 +92,12 @@ void op_choose(stack_t **stack, char *opcode)
 			return;
 		}
 	}
-	dprintf(STDERR_FILENO, "L%d: ", monty.line_number);
-	dprintf(STDERR_FILENO, "unknown instruction %s\n", opcode);
+	if (strcmp(opcode, "push"))
+	{
+		dprintf(STDERR_FILENO, "L%d: ", monty.line_number);	
+		dprintf(STDERR_FILENO, "unknown instruction %s\n", opcode);
+	}
+	else
+		dprintf(STDERR_FILENO, "L%d: usage: push integer\n", monty.line_number);
 	exit(EXIT_FAILURE);
 }
