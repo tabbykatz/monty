@@ -95,5 +95,6 @@ void rotl(stack_t **stack, unsigned int linenumber);
 void rotr(stack_t **stack, unsigned int linenumber);
 void stack_op(stack_t **stack, unsigned int linenumber);
 void queue_op(stack_t **stack, unsigned int linenumber);
+void push_queue(char *argument);
 
 #endif

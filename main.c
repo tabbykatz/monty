@@ -40,7 +40,12 @@ void read_line(void)
 		else if (strcmp(opcode, "push") == 0)
 		{
 			data = strtok(NULL, " \n");
-			push(data);
+			if (monty.is_queue)
+			{
+				push_queue(data);
+			}
+			else
+				push(data);
 		}
 		else
 			op_choose(&monty.stack, opcode);
