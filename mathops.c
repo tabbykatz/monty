@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include "lists.h"
 #include "monty.h"
 
 /**
@@ -7,17 +5,137 @@
  * @stack: double list
  * @linenumber: line
  */
-void add(stack_t **stack, unsigned int linenumber)
+void add(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
+	stack_t *freeable;
+
 	if (*stack && (*stack)->next)
 	{
 		(*stack)->next->n += (*stack)->n;
-		delete_dnodeint_at_index(stack, 0);
+		freeable = *stack;
+		*stack = (*stack)->next;
+		(*stack)->prev = NULL;
+		free(freeable);
 	}
 	else
 	{
-		fprintf(stderr, "L%d: empty stack", linenumber);
-		//free_it_all();
+		dprintf(STDERR_FILENO, "L%u: can't add, stack too short\n",
+				monty.line_number);
+		free_it_all();
+		exit(EXIT_FAILURE);
+	}
+}
+/**
+ * sub - subs top two stack mems
+ * @stack: double list
+ * @linenumber: line
+ */
+void sub(stack_t **stack, __attribute__((unused))unsigned int linenumber)
+{
+	stack_t *freeable;
+
+	if (*stack && (*stack)->next)
+	{
+		(*stack)->next->n -= (*stack)->n;
+		freeable = *stack;
+		*stack = (*stack)->next;
+		(*stack)->prev = NULL;
+		free(freeable);
+	}
+	else
+	{
+		dprintf(STDERR_FILENO, "L%u: can't sub, stack too short\n",
+				monty.line_number);
+		free_it_all();
+		exit(EXIT_FAILURE);
+	}
+}
+/**
+ * div - divs top two stack mems
+ * @stack: double list
+ * @linenumber: line
+ */
+void div_op(stack_t **stack, __attribute__((unused))unsigned int linenumber)
+{
+	stack_t *freeable;
+	
+	if ((*stack)->n == 0)
+	{
+		dprintf(STDERR_FILENO, "L%u: division by zero\n", monty.line_number);
+		free_it_all();
+		exit(EXIT_FAILURE);
+	}
+
+	if (*stack && (*stack)->next)
+	{
+		(*stack)->next->n /= (*stack)->n;
+		freeable = *stack;
+		*stack = (*stack)->next;
+		(*stack)->prev = NULL;
+		free(freeable);
+	}
+	else
+	{
+		dprintf(STDERR_FILENO, "L%u: can't div, stack too short\n",
+				monty.line_number);
+		free_it_all();
+		exit(EXIT_FAILURE);
+	}
+}
+/**
+ * div - divs top two stack mems
+ * @stack: double list
+ * @linenumber: line
+ */
+void mul(stack_t **stack, __attribute__((unused))unsigned int linenumber)
+{
+	stack_t *freeable;
+	
+	if (*stack && (*stack)->next)
+	{
+		(*stack)->next->n *= (*stack)->n;
+		freeable = *stack;
+		*stack = (*stack)->next;
+		(*stack)->prev = NULL;
+		free(freeable);
+	}
+	else
+	{
+		dprintf(STDERR_FILENO, "L%u: can't mul, stack too short\n",
+				monty.line_number);
+		free_it_all();
+		exit(EXIT_FAILURE);
+	}
+}
+/**
+ * div - divs top two stack mems
+ * @stack: double list
+ * @linenumber: line
+ */
+void mod(stack_t **stack, __attribute__((unused))unsigned int linenumber)
+{
+	stack_t *freeable;
+	
+	if ((*stack)->n == 0)
+	{
+		dprintf(STDERR_FILENO, "L%u: division by zero\n", monty.line_number);
+		free_it_all();
+		exit(EXIT_FAILURE);
+	}
+
+	if (*stack && (*stack)->next)
+	{
+		(*stack)->next->n %= (*stack)->n;
+		freeable = *stack;
+		*stack = (*stack)->next;
+		(*stack)->prev = NULL;
+		free(freeable);
+	}
+	else
+	{
+		dprintf(STDERR_FILENO, "L%u: can't mod, stack too short\n",
+				monty.line_number);
+		free_it_all();
 		exit(EXIT_FAILURE);
 	}
 }
