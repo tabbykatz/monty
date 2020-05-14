@@ -24,8 +24,13 @@ NOTE: No more than one instruction per line is allowed, there can however be as 
 | div | divide the 2nd element by the top element |
 | mul | multiply the top two elements of the stack |
 | mod | the remainder when the 2nd element is divided by the top element |
-| ||
-
+| comment | there is the ability to parse comments found in bytecode ->'#'|
+| pchar | print character at the top of the stack |
+| pstr | print the character at the top of the stack|
+| rotl | moves element at the top to the bottom of the stack |
+| rotr | the bottom of the stack becomes the top |
+| queue, stack | toggles the doubly link list implementation style |
+| nop | opcode should do nothing |
 Examples:
 `$ cat opcodetestfile.m`
 
