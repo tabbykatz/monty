@@ -39,7 +39,6 @@ void read_line(void)
 		}
 		else if (strcmp(opcode, "push") == 0)
 		{
-			dprintf(STDERR_FILENO, "hi");
 			data = strtok(NULL, " \n");
 			if (monty.is_queue)
 			{
