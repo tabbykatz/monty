@@ -116,7 +116,7 @@ void mod(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
 	stack_t *freeable;
 
-	if (!*stack)
+	if (!*stack || !(*stack)->next)
 	{
 		dprintf(STDERR_FILENO, "L%u: can't mod, stack too short\n"
 				, monty.line_number);
