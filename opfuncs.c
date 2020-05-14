@@ -49,7 +49,8 @@ void pop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 	}
 	else
 	{
-		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", monty.line_number);
+		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n"
+				, monty.line_number);
 		free_it_all();
 		exit(EXIT_FAILURE);
 	}
@@ -63,13 +64,13 @@ void swap(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
 	int tmp;
 
-	if (stack)
+	if (*stack && (*stack)->next)
 	{
 		tmp = (*stack)->n;
 		(*stack)->n = (*stack)->next->n;
 		(*stack)->next->n = tmp;
 	}
-	else if (!*stack || !(*stack)->next)
+	else
 	{
 		dprintf(STDERR_FILENO, "L%d: can't swap, stack too short\n",
 				monty.line_number);
