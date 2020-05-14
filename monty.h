@@ -51,7 +51,7 @@ typedef struct instruction_s
  * @file: monty file
  * @line: line we are interpreting
  * @stack: the stack we are building
- * @ln: current line number read
+ * @line_number: current line number read
  * @is_queue: flag for stack/ queue
  *
  * Description: this is our single global and holds everything we need.
@@ -61,7 +61,7 @@ typedef struct monty_s
 	FILE *file;
 	char *line;
 	stack_t *stack;
-	unsigned int ln;
+	unsigned int line_number;
 	bool is_queue;
 } monty_t;
 
