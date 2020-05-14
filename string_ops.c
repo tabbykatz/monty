@@ -7,9 +7,10 @@
  */
 void pchar(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
-	if (!stack)
+	if (!(*stack))
 	{
-		dprintf(STDERR_FILENO, "L%u: can't pchar, stack empty\n", monty.line_number);
+		dprintf(STDERR_FILENO, "L%u: can't pchar, stack empty\n"
+				, monty.line_number);
 		free_it_all();
 		exit(EXIT_FAILURE);
 	}
