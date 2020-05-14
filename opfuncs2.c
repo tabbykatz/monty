@@ -45,7 +45,7 @@ void stack_op(stack_t **stack, unsigned int linenumber)
  * @linenumber: current ln
  */
 void queue_op(stack_t **stack, unsigned int linenumber)
-
+{
 	(void)stack;
 	(void)linenumber;
 	monty.is_queue = true;
