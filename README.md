@@ -110,11 +110,6 @@ Examples:
 | opfuncs.c, opfuncs2.c | these files contain functionality for basic bytecode operations (pop, push, etc..) |
 | printops.c | operatons to print members from data structure |
 | check\_input.c| checks the type of input given to resolve errors |
-| ? | ? |
-| ? | ? |
-| ? | ?|
-| ? | ? |
-| ?| ? |
 
 ## Exit Status
 Exits with status `EXIT_FAILURE`
