@@ -133,6 +133,12 @@ Examples:
 | printops.c | operatons to print members from data structure |
 | check\_input.c| checks the type of input given to resolve errors |
 
+
+
+## Flow chart
+![flow chart](https://github.com/tabbykatz/monty/blob/master/montyflow.png)<br>
+
+
 ## Exit Status
 Exits with status `EXIT_FAILURE`
 
