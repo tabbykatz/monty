@@ -93,10 +93,10 @@ void op_choose(stack_t **stack, char *opcode)
 	}
 	if (strcmp(opcode, "push"))
 	{
-		dprintf(STDERR_FILENO, "L%d: ", monty.line_number);
-		dprintf(STDERR_FILENO, "unknown instruction %s\n", opcode);
+		dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", monty.line_number, opcode);
+//		dprintf(STDERR_FILENO, "unknown instruction %s\n", opcode);
 	}
 	else
-		dprintf(STDERR_FILENO, "L%d: usage: push integer\n", monty.line_number);
+		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", monty.line_number);
 	exit(EXIT_FAILURE);
 }
