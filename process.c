@@ -1,23 +1,23 @@
 #include <stdio.h>
-#include <lists.h>
-#include <monty.h>
+#include "lists.h"
+#include "monty.h"
 
-arg_t args;
+monty_t monty;
 /**
  * open_up - opens file passed
  *
  */
 void open_up(void)
 {
-	argsbuf[50];
-	args.file = fopen(args.argv[1], "r");//open file and saf FD
+	char argsbuf[50];
+	args.file = fopen(monty.argv[1], "r");//open file and saf FD
 	if (args.file)//as long as we have a file
 	{
-		while (fgets(argsbuf, sizeof(argsbuf), args.file))//read line until argbuf is full
+		while (fgets(argsbuf, sizeof(argsbuf), monty.file))//read line until argbuf is full
 		{
-			args.counter++; //we have an argument
-			args.line = argsbuf; // save line in struct
-			get_func(); // parses for argument.
+			monty.line_number++; //we have an argument
+			monty.line = argsbuf; // save line in struct
+			read_line(); // parses for argument.
 		}
 	}
 }
@@ -27,18 +27,39 @@ void open_up(void)
  */
 void read_line(void)
 {
-	char *opfunc = NULL;
+	int opfunc = NULL;
 	int i = 0;
-
-	opfunc = strtok(args.line, " \n");//get bytecode passed
-	if (opcode)
+	instruction_t fncs[] = {
+		{"push", push},
+		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
+#if 0
+		{"sub", sub},
+		{"div", div_op},
+		{"mul", mul},
+		{"mod", mod},
+		{"pchar", pchar},
+		{"pstr", pstr},
+		{"rotl", rotl},
+		{"rotr", rotr},
+		{"stack", set_stack},
+		{"queue", set_queue},
+#endif
+		{NULL, NULL}
+	};
+	opfunc = strtok(monty.line, " \n");//get bytecode passed
+	if (opfunc)
 	{
-		while (ins[i].opcode && opfunc) //iterate through list of func structs and our opcode function
+		while (fncs[i].opcode && opfunc) //iterate through list of func structs and our opcode function
 		{
-			if (strcmp(ins[i].opcode && opfunc) == 0)//call if we get a match
+			if (strcmp(fncs[i].opcode && opfunc) == 0)//call if we get a match
 			{
 				//not sure what args.stack does, was in given struct
-				ins[i].f(args.stack, args.line);
+				fncs[i].f(monty.stack, monty.line_number);
 				return;
 			}
 		}

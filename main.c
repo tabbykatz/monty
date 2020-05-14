@@ -1,5 +1,5 @@
 #include "monty.h"
-
+#include "lists.h"
 /**
  * open_up - open a monty and validate input
  * @argc: args count
@@ -37,16 +37,20 @@ void read_line(void)
 			monty.line_number++;
 			continue;
 		}
+#if 0
 		else if (strcmp(opcode, "push") == 0)
 		{
 			data = strtok(NULL, " \n");
 			if (monty.is_queue)
 				/* write a func what pushes to the queue (end) */
-				push_node_end(data);
+			//	push_node_end(data);
+				add_dnodeint_end(&(monty.stack), atoi(data));
 			else
 				/* write a func what pushes to the stack */
-				push_node(data);
+			//	push_node(data);
+				add_dnodeint(&(monty.stack), atoi(data));
 		}
+#endif
 		else
 			op_choose(&monty.stack, opcode);
 		monty.line_number++;
@@ -58,17 +62,19 @@ void read_line(void)
  * @stack: **pointer to stack
  * @opcode: opcode from this line of our monty file
  */
-void op_choose(stack_t **stack, char *opcode)
+void op_choose(stack_t **stack, unsigned int opcode)
 {
 	int i;
 	char *op;
 	instruction_t fncs[] = {
+		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+#if 0
 		{"sub", sub},
 		{"div", div_op},
 		{"mul", mul},
@@ -79,6 +85,7 @@ void op_choose(stack_t **stack, char *opcode)
 		{"rotr", rotr},
 		{"stack", set_stack},
 		{"queue", set_queue},
+#endif
 		{NULL, NULL}
 	};
 

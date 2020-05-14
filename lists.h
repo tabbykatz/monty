@@ -1,9 +1,12 @@
 #ifndef LISTS_H
 #define LISTS_H
 
+#include "monty.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+
+typedef stack_t dlistint_t;
 
 typedef struct arguments
 {
@@ -14,24 +17,8 @@ typedef struct arguments
 } arg_t;
 
 extern arg_t args;
-/**
- * struct dlistint_s - doubly linked list
- * @n: integer
- * @prev: points to the previous node
- * @next: points to the next node
- *
- * Description: doubly linked list node structure
- * for Holberton project
- */
-/*
-typedef struct dlistint_s
-{
-	int n;
-	struct dlistint_s *prev;
-	struct dlistint_s *next;
-} dlistint_t;
-*/
-typedef stack_t dlistint_t;
+
+/* doubly linked list functions*/
 
 size_t print_dlistint(const dlistint_t *h);
 size_t dlistint_len(const dlistint_t *h);

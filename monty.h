@@ -13,7 +13,7 @@
 /* including our lists header */
 
 #include "lists.h"
-
+#if 0
 /* this could be our global struct */
 typedef struct monty_s
 {
@@ -25,7 +25,7 @@ typedef struct monty_s
 } monty_t;
 
 extern monty_t monty;
-
+#endif
 /*structs they gave us */
 
 /**
@@ -59,10 +59,23 @@ typedef struct instruction_s
 } instruction_t;
 /* end structs they gave us */
 
+/* this could be our global struct */
+typedef struct monty_s
+{
+	char **argv;
+	FILE *file;
+	char *line;
+	stack_t *stack;
+	unsigned int line_number;
+//	bool is_queue;
+} monty_t;
+
+extern monty_t monty;
 /* prototypes - monty specific*/
-void open_up(int argc, char *filename);
+void open_up(void);
+//void open_up(int argc, char *filename);
 void read_line();
-void op_choose(stack_t **stack, char *opcode);
+void op_choose(stack_t **stack, unsigned int opcode);
 
 /* prototypes - opcode functions */
 void push(stack_t **stack, unsigned int linenumber);

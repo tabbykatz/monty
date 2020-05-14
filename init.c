@@ -25,7 +25,7 @@ int main(int argc, char **argv)
  *
  *
  */
-init_montyStruct()
+void init_montyStruct(void)
 {
 
 	monty.file = NULL;

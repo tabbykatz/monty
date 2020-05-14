@@ -1,3 +1,6 @@
+#include <lists.h>
+#include <monty.h>
+
 /**
  * print_dlistint - print dlist
  * @h: head of list
