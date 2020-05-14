@@ -59,9 +59,9 @@ void op_choose(stack_t **stack, char *opcode)
 	char *op;
 	instruction_t fncs[] = {
 		{"pall", pall},
-/*		{"pint", pint},
-*		{"pop", pop},
-*		{"swap", swap},
+		{"pint", pint},
+		{"pop", pop},
+/*		{"swap", swap},
 *		{"add", add},
 *		{"nop", nop},
 *		{"sub", sub},

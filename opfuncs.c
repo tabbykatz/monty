@@ -1,5 +1,4 @@
 #include "monty.h"
-#include "lists.h"
 /**
  * push - add node to list
  * @stack: double list
@@ -37,21 +36,28 @@ void push(char *argument)
  * @stack: double list
  * @linenumber: line
  */
-/* void pop(stack_t **stack, unsigned int linenumber)
+void pop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
-	if (stack)
-		delete_dnodeint_at_index(stack, 0);
+	stack_t *freeable = *stack;
+
+	if (*stack)
+	{
+		*stack = (*stack)->next;
+		if (*stack)
+			(*stack)->prev = NULL;
+		free(freeable);
+	}
 	else
-		fprintf(sdterr, "Cant pop from empty stack");
-		//free all
+		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", monty.line_number);
+		free_it_all();
 		exit(EXIT_FAILURE);
-}*/
+}
 /**
  * swap - swap place of top two members in stack
  * @stack: double list
  * @linenumber: line
  */
-/* void swap(stack_t **stack, unsigned int linenumber)
+/* void swap(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
 	int tmp;
 	//swap first two stack members data element
@@ -74,9 +80,8 @@ void push(char *argument)
  * @stack: double list
  * @linenumber: line
  */
-/* void nop(stack_t **stack, unsigned int linenumber)
+/* void nop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
 	(void)stack;
-	(void)linenumber;
 }
 */

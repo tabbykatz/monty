@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * pall - print all members
  * @stack: double list
@@ -19,12 +20,14 @@ void pall(stack_t **stack, __attribute__((unused))unsigned int linenumber)
  * @stack: double list
  * @linenumber: line
  */
-void pint(stack_t **stack, unsigned int linenumber)
+void pint(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
-	if (stack)
+	if (*stack)
 		printf("%d\n", (*stack)->n);
 	else
 	{
-		fprintf(stderr, "L%ul: Stack empty, cant print ints", linenumber);
+		dprintf(STDERR_FILENO, "L%u: can't pint, stack empty\n", monty.line_number);
+		free_it_all();
+		exit(EXIT_FAILURE);
 	}
 }

@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include "lists.h"
 #include "monty.h"
 
 /**
@@ -7,7 +5,7 @@
  * @stack: double list
  * @linenumber: line
  */
-void add(stack_t **stack, unsigned int linenumber)
+/*void add(stack_t **stack, unsigned int linenumber)
 {
 	if (*stack && (*stack)->next)
 	{
@@ -20,4 +18,4 @@ void add(stack_t **stack, unsigned int linenumber)
 		//free_it_all();
 		exit(EXIT_FAILURE);
 	}
-}
+}*/
