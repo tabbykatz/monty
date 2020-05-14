@@ -74,5 +74,15 @@ void nop(stack_t **stack, unsigned int linenumber);
 void add(stack_t **stack, unsigned int linenumber);
 void pall(stack_t **stack, unsigned int linenumber);
 void pint(stack_t **stack, unsigned int linenumber);
+void sub(stack_t **stack, unsigned int linenumber);
+void div_op(stack_t **stack, unsigned int linenumber);
+void mul(stack_t **stack, unsigned int linenumber);
+void mod(stack_t **stack, unsigned int linenumber);
+void pchar(stack_t **stack, unsigned int linenumber);
+void pstr(stack_t **stack, unsigned int linenumber);
+void rotl(stack_t **stack, unsigned int linenumber);
+void rotr(stack_t **stack, unsigned int linenumber);
+void stack_op(stack_t **stack, unsigned int linenumber);
+void queue_op(stack_t **stack, unsigned int linenumber);
 
 #endif

@@ -11,7 +11,8 @@ void push(char *argument)
 
 	if (!check_input(argument))
 	{
-		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", monty.line_number);
+		dprintf(STDERR_FILENO, "L%u: usage: push integer\n",
+				monty.line_number);
 		free_it_all();
 		exit(EXIT_FAILURE);
 	}
@@ -48,19 +49,21 @@ void pop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 		free(freeable);
 	}
 	else
+	{
 		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", monty.line_number);
 		free_it_all();
 		exit(EXIT_FAILURE);
+	}
 }
 /**
  * swap - swap place of top two members in stack
  * @stack: double list
  * @linenumber: line
  */
-/* void swap(stack_t **stack, __attribute__((unused))unsigned int linenumber)
+void swap(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
 	int tmp;
-	//swap first two stack members data element
+
 	if (stack)
 	{
 		tmp = (*stack)->n;
@@ -69,19 +72,48 @@ void pop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 	}
 	else if (!*stack || !(*stack)->next)
 	{
-		fprintf(stderr, "Stack does not have enough members to swap");
-		//free all
-		exit(EXIT_STATUS);
+		dprintf(STDERR_FILENO, "L%d: can't swap, stack too short\n",
+				monty.line_number);
+		free_it_all();
+		exit(EXIT_FAILURE);
 	}
 }
-*/
+
 /**
  * nop - does nothng
  * @stack: double list
  * @linenumber: line
  */
-/* void nop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
+void nop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
 	(void)stack;
 }
-*/
+/**
+ * rotl - rotates top to bottom
+ * @stack: head of stack
+ * @linenumber: current ln
+ *
+ *
+ */
+void rotl(stack_t **stack, __attribute__((unused))unsigned int linenumber)
+{
+	stack_t *first, *second;
+
+	if (!*stack || !(*stack)->next)
+	{
+		return;
+	}
+
+	first = *stack;
+	second = (*stack)->next;
+	*stack = second;
+	second->prev = NULL;
+
+	while (second->next)
+	{
+		second = second->next;
+	}
+	second->next = first;
+	first->next = NULL;
+	first->prev = second;
+}
