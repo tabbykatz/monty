@@ -10,8 +10,8 @@ void push(char *argument)
 
 	if (!check_input(argument))
 	{
-		dprintf(STDERR_FILENO, "L%u: usage: push integer\n",
-				monty.line_number);
+		dprintf(STDERR_FILENO, "L%u: usage: push integer\n"
+				, monty.line_number);
 		free_it_all();
 		exit(EXIT_FAILURE);
 	}
