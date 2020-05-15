@@ -12,7 +12,7 @@ bool check_input(char *str)
 	int i = 0;
 
 	/* no argument */
-	if (strlen(str) <= 0)
+	if (!str)
 	{
 		return (false);
 	}
